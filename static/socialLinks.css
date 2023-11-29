@@ -1,0 +1,123 @@
+/*Social-Links*/
+/*body {*/
+/*    font-family: 'Incognito Bold', sans-serif;*/
+/*    color: #3f3f46;*/
+/*}*/
+.intro p {
+    font-family: "Incognito Regular", sans-serif;
+    line-height: 1.5;
+    color: #3f3f46;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 1rem;
+    margin: 2.5rem 0;
+}
+
+.social-link-item a {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cbd5e0;
+    transition: color 0.3s ease;
+
+    font-family: 'Incognito Regular', sans-serif;
+    color: #3f3f46;
+    text-decoration: none;
+}
+
+/*.social-link-item a img {*/
+/*    flex-shrink: 0;*/
+/*    width: 1.25rem;*/
+/*    height: 1.25rem;*/
+/*    color: #718096;*/
+/*    transition: color 0.3s ease;*/
+/*}*/
+
+.social-link-item a:hover {
+    color: #3185FC;
+}
+
+.dark .social-link-item a {
+    border-color: #2d3748;
+}
+
+.dark .social-link-item a img {
+    color: #a0aec0;
+}
+
+.dark .social-link-item a:hover img {
+    color: #ffffff;
+}
+
+
+.content {
+    /* Adjust the width as needed */
+    width: 100%;
+}
+
+.illustration {
+    /* Adjust the width as needed */
+    width: 100%;
+}
+
+/*Work Experience*/
+
+.tag {
+    display: grid;
+    place-items: center;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--zinc-200);
+    min-height: 80px;
+    min-width: 80px;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    overflow: clip;
+    position: relative;
+}
+
+/*.dark .tag {*/
+/*    background-color: #a0aec0;*/
+/*    border-color: #b91818;*/
+/*}*/
+
+.Div {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    max-width: 36rem;
+    position: relative;
+}
+
+.Div::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 5rem;
+    left: 3.25rem;
+    width: 1px;
+    height: calc(100% - 80px);
+    background-color: rgb(222, 226, 230);
+}
+
+@media (min-width: 1024px) {
+    .Div {
+        gap: 1.5rem;
+    }
+}
+
+.dark .Div::before {
+    background-color: #3f3f46;
+}
+
+
+h3 {
+    color: #3185FC;
+}
+
+.my-4 {
+    font-family: "Incognito Regular", sans-serif;
+
+}
+

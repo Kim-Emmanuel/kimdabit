@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Projects | Kim Dabit</title>
+    <meta name="description" content="Learn more about my skills, experience and technical background">
+    <meta property="og:title" content="Projects | Kim Dabit">
+    <meta property="og:url" content="https://kimdabit.com/projects">
+    <meta property="og:description" content="Learn more about my skills, experience and technical background">
+    <link rel="icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'projects.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font/font.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-md-block">
+	<div class="container">
+		<a class="navbar-brand mx-auto" href="{% url 'home' %}">
+			<img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'about' %}">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'projects' %}">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'photos' %}">Photos</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+{% load static %}
+
+{% block content %}
+  <main class="container py-5">
+    <header class="mb-5">
+      <h1 class="font-weight-bold text-3xl mb-3">Projects</h1>
+      <p class="text-base text-muted">
+        Over the course of my journey, I’ve embarked on numerous projects, each one a stepping stone leading me to where I am today.
+	      The projects showcased here are the ones that fill me with a sense of pride and accomplishment.
+	      They are a testament to my growth and evolution in this ever-changing digital landscape.
+      </p>
+    </header>
+
+	  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 mb-4">
+		  {% for project in projects %}
+			  <div class="col d-flex">
+				  <a href="{% url 'project_detail' project.id %}" class="card flex-row align-items-center">
+					  <img src="{{ project.logo.url }}" class="card-img-left" alt="{{ project.name }}" style="width: 100px;">
+					  <div class="card-body">
+						  <h2 class="h5 card-title mb-1">{{ project.name }}</h2>
+						  <p class="card-text text-muted">{{ project.tagline }}</p>
+					  </div>
+				  </a>
+        </div>
+		  {% empty %}
+			  <div class="col-12">
+				  <p>No projects found.</p>
+			  </div>{% endfor %}
+	  </div>
+  </main>
+{% endblock %}
+
+<footer class="border-top py-5">
+	<div class="container d-flex flex-column flex-lg-row justify-content-lg-between justify-content-center align-items-center gap-3">
+		<div class="d-flex flex-column flex-md-row align-items-center gap-2">
+			<a class="navbar-brand mx-auto" href="{% url 'home' %}">
+			<img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo">
+		</a>
+		</div>
+		<div class="d-flex flex-column align-items-center align-items-lg-end text-center text-lg-start">
+			<small class="text-muted">
+				Copyright © Kim Dabit {{ current_year }} All rights Reserved
+			</small>
+		</div>
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

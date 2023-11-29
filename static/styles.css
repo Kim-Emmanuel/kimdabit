@@ -1,0 +1,29 @@
+body {
+    font-family: 'Incognito Bold', sans-serif;
+    color: #3f3f46;
+    background-image: url("images/IMG_5968.JPG");
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+/*Nav Bar*/
+
+.navbar {
+    background-image: url("images/IMG_5968.JPG");
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+
+/*@keyframes zoomout {*/
+/*    0% {*/
+/*        background-size: 100%;*/
+/*    }*/
+/*    100% {*/
+/*        background-size: 150%;*/
+/*    }*/
+/*}*/
+
+.navbar-nav .nav-link:hover {
+    color: #3185FC !important;
+}

@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Kim Dabit | Software Developer</title>
+    <meta name="description" content="Learn more about my skills, experience and technical background">
+    <meta property="og:title" content="Kim Dabit | Software Developer">
+    <meta property="og:url" content="https://kimdabit.com/about">
+    <meta property="og:description" content="Learn more about my skills, experience and technical background">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font/font.css' %}">
+</head>
+<body>
+<footer class="border-top py-5">
+	<div class="container d-flex flex-column flex-lg-row justify-content-lg-between justify-content-center align-items-center gap-3">
+		<div class="d-flex flex-column flex-md-row align-items-center gap-2">
+			<a class="navbar-brand mx-auto" href="{% url 'home' %}">
+			<img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo">
+		</a>
+		</div>
+		<div class="d-flex flex-column align-items-center align-items-lg-end text-center text-lg-start">
+			<small class="text-muted">
+				Copyright © Kim Dabit {{ current_year }} All rights Reserved
+			</small>
+		</div>
+	</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

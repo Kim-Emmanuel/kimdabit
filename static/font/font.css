@@ -1,0 +1,31 @@
+/* Incognito Bold */
+@font-face {
+    font-family: 'Incognito Bold';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Incognito Bold'), url('incognito_bold.woff2') format('woff2');
+}
+
+/* Incognito Condensed */
+@font-face {
+    font-family: 'Incognito Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Incognito Condensed'), url('incognito_condensed.woff2') format('woff2');
+}
+
+/* Incognito Medium */
+@font-face {
+    font-family: 'Incognito Medium';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Incognito Medium'), url('incognito_medium.woff2') format('woff2');
+}
+
+/* Incognito Regular */
+@font-face {
+    font-family: 'Incognito Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Incognito Regular'), url('incognito_regular.woff2') format('woff2');
+}

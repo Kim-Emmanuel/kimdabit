@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Kim Dabit | Software Developer</title>
+    <meta name="description" content="Learn more about my skills, experience and technical background">
+    <meta property="og:title" content="Kim Dabit | Software Developer">
+    <meta property="og:url" content="https://kimdabit.com/home">
+    <meta property="og:description" content="Learn more about my skills, experience and technical background">
+    <meta property="og:image" content="">
+    <link rel="icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'socialLinks.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font/font.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-md-block">
+	<div class="container">
+		<a class="navbar-brand mx-auto" href="{% url 'home' %}">
+			<img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'about' %}">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'projects' %}">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'photos' %}">Photos</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="container py-5">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="content">
+				<div class="intro">
+					<h1>{{ intro.title }}</h1>
+					<p>{{ intro.description }}</p>
+				</div>
+				<div class="social-links d-flex flex-wrap gap-3 my-5">
+					{% for link in social_links %}
+						{% if link.status == type %}
+							<div class="social-link-item">
+								<a href="{{ link.url }}" target="_blank">
+									<img src="{{ link.icon.url }}" alt="{{ link.name }}" class="flex-shrink-0" style="width: 1.25rem; height: 1.25rem;">
+									&nbsp;{{ link.name }}
+								</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="illustration">
+				<img src="{% static 'images/intro.png' %}" alt="Illustration" style="max-width: 100%;">
+			</div>
+		</div>
+	</div>
+</main>
+
+<div class="container py-5">
+	<div class="mb-5">
+		<h2 class="display-4 mb-3 font-weight-bold">
+			Work Experience
+		</h2>
+	</div>
+
+	<div class="row">
+		{% for job in jobs %}
+			<div class="Div col-lg-6 d-flex mb-4">
+				<a href="{{ job.url }}" target="_blank" class="tag grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-clip relative mr-3" style="width: 80px; height: 80px;">
+					<img src="{{ job.logo.url }}" class="img-fluid" alt="{{ job.name }} logo">
+				</a>
+
+				<div>
+					<h3 class="h5 font-weight-bold">{{ job.name }}</h3>
+					<p>{{ job.jobTitle }}</p>
+					<time class="text-muted small mt-2 d-block text-uppercase">
+						{{ job.startDate }} -
+						{% if job.endDate %}
+							{{ job.endDate }}
+						{% else %}
+							<span class="text-primary">
+								Present
+							</span>
+						{% endif %}
+					</time>
+					<p class="my-4">
+						{{ job.description }}
+					</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+<footer class="border-top py-5">
+	<div class="container d-flex flex-column flex-lg-row justify-content-lg-between justify-content-center align-items-center gap-3">
+		<div class="d-flex flex-column flex-md-row align-items-center gap-2">
+			<a class="navbar-brand mx-auto" href="{% url 'home' %}">
+			<img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo">
+		</a>
+		</div>
+		<div class="d-flex flex-column align-items-center align-items-lg-end text-center text-lg-start">
+			<small class="text-muted">
+				Copyright © Kim Dabit {{ current_year }} All rights Reserved
+			</small>
+		</div>
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

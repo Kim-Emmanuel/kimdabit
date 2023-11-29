@@ -1,0 +1,29 @@
+.border-top {
+    position: relative;
+    border-top: 1px solid transparent;
+    padding-bottom: 14rem !important;
+}
+
+.border-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px; /* Adjust this to change the length of the line */
+    height: 1px;
+    background-color: #3185FC;
+    animation: animateBorder 2s linear infinite;
+    transform: translateX(-50%);
+}
+
+@keyframes animateBorder {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 400px; /* Adjust this to change the length of the line */
+    }
+    100% {
+        width: 0;
+    }
+}
